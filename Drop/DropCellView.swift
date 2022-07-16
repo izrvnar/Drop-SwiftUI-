@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct DropCellView: View {
+    var documentLibrary: URL? {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        print(paths[0])
+        
+        return paths[0]
+    }
+    var clothingItem: ClothingItem
     var body: some View {
         HStack{
-            Image("shoe")
+            Image(uiImage: fetchImage(withIdentifier: clothingItem.image ?? "empty")!)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 80)
                 .cornerRadius(5)
             
             VStack(alignment: .leading, spacing: 10){
-                Text("Off White Golf Wang")
+                Text(clothingItem.name ?? "Clothing Item")
                     .fontWeight(.semibold)
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
                 
-                Text("Release Date: Today")
+                Text(clothingItem.date?.formatted() ?? Date().formatted())
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .padding(.bottom)
@@ -57,13 +65,18 @@ struct DropCellView: View {
             
  
         }.clipShape(RoundedRectangle(cornerRadius: 10))
-            .background(.regularMaterial)
-            .shadow(radius: 2)
     }
+    
+    func fetchImage(withIdentifier id: String) -> UIImage?{
+        if let imagePath = documentLibrary?.appendingPathComponent(id), let imageFromDisk = UIImage(contentsOfFile: imagePath.path){
+            return imageFromDisk
+    }
+        return nil
+}
 }
 
-struct DropCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        DropCellView()
-    }
-}
+//struct DropCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DropCellView(clothingItem: <#T##ClothingItem#>)
+//    }
+//}

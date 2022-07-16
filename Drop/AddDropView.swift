@@ -16,9 +16,19 @@ struct AddDropView: View {
     @State private var link = ""
     @State private var notes = ""
     
+    @Environment(\.dismiss) var dismiss
+    
     //image picker
     @State private var image = UIImage(named: "camera")
     @State private var isShowingPhotoPicker = false
+    // document library property
+    var documentLibrary: URL? {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        print(paths[0])
+        
+        return paths[0]
+    }
     
     @Environment(\.managedObjectContext) var moc
     
@@ -72,6 +82,15 @@ struct AddDropView: View {
                         newDrop.link = link
                         newDrop.notes = notes
                         newDrop.type = type
+                        
+                        if let image = image{
+                            let clothingImage = UUID().uuidString
+                            newDrop.image = clothingImage
+                            saveImage(image: image, withIdentifier: clothingImage)
+                        }
+                        
+                        try? moc.save()
+                        dismiss()
                     }
                 }
                 
@@ -88,18 +107,28 @@ struct AddDropView: View {
         
     }//: Body
     
-    func imagePicker(){
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .photoLibrary
-        }
-        
-        
+//MARK: Image methods
+    func fetchImage(withIdentifier id: String) -> UIImage?{
+        if let imagePath = documentLibrary?.appendingPathComponent(id), let imageFromDisk = UIImage(contentsOfFile: imagePath.path){
+            return imageFromDisk
     }
+        return nil
+}
+    
+    func saveImage(image: UIImage, withIdentifier id: String){
+        if let imagePath = documentLibrary?.appendingPathComponent(id){
+            if let data = image.jpegData(compressionQuality: 0.8){
+                do {
+                    try data.write(to: imagePath)
+                } catch {
+                    print("Error saving the image - \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    
+    
     
     
 }//: Add Drop View

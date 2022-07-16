@@ -22,7 +22,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                
+                ForEach(dropList){ item in
+                    DropCellView(clothingItem: item)
+                }
+                .onDelete(perform: deleteItems)
+         
             }
             .navigationTitle("Drop")
             .toolbar{
@@ -40,6 +44,17 @@ struct ContentView: View {
             })
         }
     }//: Body
+    
+    //MARK: - Methods
+    // delete item function
+    func deleteItems(at offsets: IndexSet) {
+        for offset in offsets{
+            let clothingItem = dropList[offset]
+            moc.delete(clothingItem)
+        }
+    
+    }
+    
 }//: ContentView
 
 struct ContentView_Previews: PreviewProvider {
