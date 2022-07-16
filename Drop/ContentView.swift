@@ -10,6 +10,14 @@ import SwiftUI
 struct ContentView: View {
     //MARK: - Properties
     @State private var showingAddScreen = false
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date),
+        SortDescriptor(\.name)
+    
+    ])
+    
+    var dropList: FetchedResults<ClothingItem>
     //MARK: -Body
     var body: some View {
         NavigationView{

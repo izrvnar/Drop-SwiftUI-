@@ -16,6 +16,12 @@ struct AddDropView: View {
     @State private var link = ""
     @State private var notes = ""
     
+    //image picker
+    @State private var image = UIImage(named: "camera")
+    @State private var isShowingPhotoPicker = false
+    
+    @Environment(\.managedObjectContext) var moc
+    
     
     
    // type array
@@ -45,16 +51,27 @@ struct AddDropView: View {
                 }
                 
                 Section{
-                    Image(systemName: "camera")
+                    Image(uiImage: ((image ?? UIImage(systemName: "camera"))!))
                         .resizable()
                         .scaledToFit()
+                        .frame(height: 150, alignment: .center)
+                        .onTapGesture{
+                            isShowingPhotoPicker.toggle()
+                        }
                 }header: {
                     Text("Add Image")
                 }
                 
                 Section{
                     Button("Save"){
-                        //TODO: Create New Drop
+                       let newDrop = ClothingItem(context: moc)
+                        newDrop.id = UUID()
+                        newDrop.name = name
+                        newDrop.brand = brand
+                        newDrop.date = releaseDate
+                        newDrop.link = link
+                        newDrop.notes = notes
+                        newDrop.type = type
                     }
                 }
                 
@@ -62,14 +79,30 @@ struct AddDropView: View {
                 
             }
             .navigationTitle("Add Drop")
+            .sheet(isPresented: $isShowingPhotoPicker, content: {
+                ImagePicker(image: $image)
+            })
         }
         
+        
+        
+    }//: Body
+    
+    func imagePicker(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.sourceType = .camera
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
         
         
     }
     
     
-}
+}//: Add Drop View
 
 
 struct AddDropView_Previews: PreviewProvider {

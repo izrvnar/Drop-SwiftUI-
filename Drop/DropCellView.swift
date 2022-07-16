@@ -25,17 +25,32 @@ struct DropCellView: View {
                 Text("Release Date: Today")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                    .padding(.bottom)
                 
                 HStack{
-                    Button("Link"){
+                    Button{
                         //TODO: Add image to go to link
                         
+                    } label: {
+                        Image(systemName: "link")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 30)
+                            .tint(.black)
                     }
                     Spacer()
                     
-                    Button("Closet"){
+                    Button{
                         //TODO: Add image to add to closet
                         
+                    }label: {
+                        Image(systemName: "star")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 30)
+                            .tint(.black)
+                            .padding(.horizontal)
+                
                     }
                 }
             }
@@ -43,6 +58,7 @@ struct DropCellView: View {
  
         }.clipShape(RoundedRectangle(cornerRadius: 10))
             .background(.regularMaterial)
+            .shadow(radius: 2)
     }
 }
 
