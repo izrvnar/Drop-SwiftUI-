@@ -35,7 +35,7 @@ struct AddDropView: View {
     
     
    // type array
-    let types = ["Shoes", "Shirt", "Pants", "accessories", "other"]
+    let types = ["Shoes", "Shirt", "Pants", "Accessories", "Other"]
     
     var body: some View {
         NavigationView{

@@ -16,6 +16,8 @@
 		90E8125828809F7C00F6F76C /* ClothingItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125628809F7C00F6F76C /* ClothingItem.xcdatamodeld */; };
 		90E8125A2880A01B00F6F76C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E812592880A01B00F6F76C /* DataController.swift */; };
 		90E8125C2882F64900F6F76C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125B2882F64900F6F76C /* ImagePicker.swift */; };
+		90E8125F2884385900F6F76C /* ClothingItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125D2884385900F6F76C /* ClothingItem+CoreDataClass.swift */; };
+		90E812602884385900F6F76C /* ClothingItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125E2884385900F6F76C /* ClothingItem+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		90E8125728809F7C00F6F76C /* ClothingItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClothingItem.xcdatamodel; sourceTree = "<group>"; };
 		90E812592880A01B00F6F76C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		90E8125B2882F64900F6F76C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		90E8125D2884385900F6F76C /* ClothingItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClothingItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		90E8125E2884385900F6F76C /* ClothingItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClothingItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 		90E81243287F8B5300F6F76C /* Drop */ = {
 			isa = PBXGroup;
 			children = (
+				90E8125D2884385900F6F76C /* ClothingItem+CoreDataClass.swift */,
+				90E8125E2884385900F6F76C /* ClothingItem+CoreDataProperties.swift */,
 				90E81244287F8B5300F6F76C /* DropApp.swift */,
 				90E81246287F8B5300F6F76C /* ContentView.swift */,
 				90E812542880994300F6F76C /* DropCellView.swift */,
@@ -153,9 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90E81247287F8B5300F6F76C /* ContentView.swift in Sources */,
+				90E812602884385900F6F76C /* ClothingItem+CoreDataProperties.swift in Sources */,
 				90E8125A2880A01B00F6F76C /* DataController.swift in Sources */,
 				90E812552880994300F6F76C /* DropCellView.swift in Sources */,
 				90E8125C2882F64900F6F76C /* ImagePicker.swift in Sources */,
+				90E8125F2884385900F6F76C /* ClothingItem+CoreDataClass.swift in Sources */,
 				90E81245287F8B5300F6F76C /* DropApp.swift in Sources */,
 				90E81253287F8C5300F6F76C /* AddDropView.swift in Sources */,
 				90E8125828809F7C00F6F76C /* ClothingItem.xcdatamodeld in Sources */,

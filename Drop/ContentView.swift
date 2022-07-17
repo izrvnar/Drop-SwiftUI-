@@ -52,6 +52,8 @@ struct ContentView: View {
             let clothingItem = dropList[offset]
             moc.delete(clothingItem)
         }
+        
+        try? moc.save()
     
     }
     

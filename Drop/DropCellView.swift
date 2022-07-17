@@ -16,28 +16,31 @@ struct DropCellView: View {
         return paths[0]
     }
     var clothingItem: ClothingItem
+    var defaultImage = UIImage(systemName: "camera")
     var body: some View {
         HStack{
-            Image(uiImage: fetchImage(withIdentifier: clothingItem.image ?? "empty")!)
+            Image(uiImage: (fetchImage(withIdentifier: clothingItem.wrappedImage))!)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 80)
                 .cornerRadius(5)
             
             VStack(alignment: .leading, spacing: 10){
-                Text(clothingItem.name ?? "Clothing Item")
+                Text(clothingItem.wrappedName)
                     .fontWeight(.semibold)
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
                 
-                Text(clothingItem.date?.formatted() ?? Date().formatted())
+                Text(clothingItem.wrappedDate.formatted())
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .padding(.bottom)
                 
                 HStack{
                     Button{
-                        //TODO: Add image to go to link
+                        // try to add link on the button
+                        
+                        
                         
                     } label: {
                         Image(systemName: "link")
@@ -74,6 +77,8 @@ struct DropCellView: View {
         return nil
 }
 }
+
+// need to add static data
 
 //struct DropCellView_Previews: PreviewProvider {
 //    static var previews: some View {
