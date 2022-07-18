@@ -37,18 +37,18 @@ struct DropCellView: View {
                     .padding(.bottom)
                 
                 HStack{
-                    Button{
-                        // try to add link on the button
-                        
-                        
-                        
-                    } label: {
+                    
+                    Link(destination: (URL(string: clothingItem.wrappedLink)  ?? URL(string: "https://www.google.com"))!, label: {
                         Image(systemName: "link")
                             .resizable()
                             .scaledToFit()
                             .frame(height: 30)
                             .tint(.black)
-                    }
+                    }).buttonStyle(PlainButtonStyle())
+
+                    
+                    
+                    
                     Spacer()
                     
                     Button{

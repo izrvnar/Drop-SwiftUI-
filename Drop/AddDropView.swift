@@ -20,6 +20,7 @@ struct AddDropView: View {
     
     //image picker
     @State private var image = UIImage(systemName: "camera")
+    
     @State private var isShowingPhotoPicker = false
     // document library property
     var documentLibrary: URL? {
