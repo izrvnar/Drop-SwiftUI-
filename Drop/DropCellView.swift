@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DropCellView: View {
     var documentLibrary: URL? {
@@ -78,10 +79,23 @@ struct DropCellView: View {
 }
 }
 
-// need to add static data
 
 //struct DropCellView_Previews: PreviewProvider {
+//    static let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//
 //    static var previews: some View {
-//        DropCellView(clothingItem: <#T##ClothingItem#>)
+//        let clothingItem = ClothingItem(context: moc)
+//        clothingItem.name = "Cream GolfWang Chuck Lows"
+//        clothingItem.brand = "Converse"
+//        clothingItem.link = ""
+//        clothingItem.notes = ""
+//        let image = UIImage(systemName: "camera")
+//
+//        return NavigationView{
+//            DropCellView(clothingItem: clothingItem, defaultImage: image)
+//        }
+//
+//
+//
 //    }
 //}

@@ -18,6 +18,7 @@
 		90E8125C2882F64900F6F76C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125B2882F64900F6F76C /* ImagePicker.swift */; };
 		90E8125F2884385900F6F76C /* ClothingItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125D2884385900F6F76C /* ClothingItem+CoreDataClass.swift */; };
 		90E812602884385900F6F76C /* ClothingItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8125E2884385900F6F76C /* ClothingItem+CoreDataProperties.swift */; };
+		90E812622885DB5500F6F76C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E812612885DB5500F6F76C /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		90E8125B2882F64900F6F76C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		90E8125D2884385900F6F76C /* ClothingItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClothingItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		90E8125E2884385900F6F76C /* ClothingItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClothingItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		90E812612885DB5500F6F76C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				90E8125628809F7C00F6F76C /* ClothingItem.xcdatamodeld */,
 				90E812592880A01B00F6F76C /* DataController.swift */,
 				90E81252287F8C5300F6F76C /* AddDropView.swift */,
+				90E812612885DB5500F6F76C /* DetailView.swift */,
 				90E8125B2882F64900F6F76C /* ImagePicker.swift */,
 				90E81248287F8B5700F6F76C /* Assets.xcassets */,
 				90E8124A287F8B5700F6F76C /* Preview Content */,
@@ -161,6 +164,7 @@
 				90E81247287F8B5300F6F76C /* ContentView.swift in Sources */,
 				90E812602884385900F6F76C /* ClothingItem+CoreDataProperties.swift in Sources */,
 				90E8125A2880A01B00F6F76C /* DataController.swift in Sources */,
+				90E812622885DB5500F6F76C /* DetailView.swift in Sources */,
 				90E812552880994300F6F76C /* DropCellView.swift in Sources */,
 				90E8125C2882F64900F6F76C /* ImagePicker.swift in Sources */,
 				90E8125F2884385900F6F76C /* ClothingItem+CoreDataClass.swift in Sources */,

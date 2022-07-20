@@ -23,7 +23,12 @@ struct ContentView: View {
         NavigationView{
             List{
                 ForEach(dropList){ item in
-                    DropCellView(clothingItem: item)
+                    NavigationLink{
+                        DetailView(clothingItem: item)
+                    } label: {
+                        DropCellView(clothingItem: item)
+
+                    }
                 }
                 .onDelete(perform: deleteItems)
          
